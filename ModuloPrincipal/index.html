@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <main>
+        <section class="contenedor-sidebar">
+            <aside class="contenedor-encabezado">
+                <article>
+                    <p style="color: rgb(24, 36, 51);">Security <span style="color: #0066ff;">Control</span></p>        
+                </article>
+            </aside>
+            <ul class="contenedor-items">
+                <a href="" data-id="Seguridad" class="opcion active">
+                    <i class="material-symbols-outlined">
+                        fingerprint
+                    </i>
+                    <span class="tooltip">Seguridad</span>
+                </a>
+                <a href="" data-id="DashBoard" class="opcion">
+                    <i class="material-symbols-outlined">
+                        Dashboard
+                    </i>
+                    <span class="tooltip">DashBoard</span>
+                </a>
+                <a href="" data-id="Camaras" class="opcion">
+                    <i class="material-symbols-outlined">
+                        linked_camera
+                    </i>
+                    <span class="tooltip">Camaras</span>
+                </a>
+                <a href="" data-id="Licencia" class="opcion">
+                    <i class="material-symbols-outlined">
+                        payments
+                    </i>
+                    <span class="tooltip">Licencia</span>
+                </a>
+            </ul>
+           
+        </section>
+        <section class="contenedor-principal">
+            <article class="titulo-contenedor">
+                <i class=" fa-solid fa-bars bar-option inactivo"></i>
+                <i class=" fa-solid fa-x bar-option active"></i>
+                <h2>Modulo <span style="color: #2870dd" id="modulo-titulo">Sistema</span></h2>
+            </article>
+        </section>
+    </main>
+</body>
+<script>
+    let link_item = document.querySelectorAll('.opcion')
+    let contenedor_principal = document.querySelector('.contenedor-sidebar')
+    let bar = document.querySelectorAll('.bar-option')
+    const modulo_titulo = document.querySelector('#modulo-titulo')
+    link_item.forEach(data =>{
+        data.addEventListener('click', (e)=>{
+            e.preventDefault();
+            let link_activo = document.querySelector('.opcion.active')
+            link_activo.classList.remove('active')
+            data.classList.add('active')
+            const contenido = data.getAttribute('data-id')
+            modulo_titulo.textContent = contenido
+        })
+    })
+</script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</html>
