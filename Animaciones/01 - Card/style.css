@@ -1,0 +1,114 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+main{
+    background: rgb(230, 218, 218);
+    display: flex;
+}
+.contenedor-sidebar
+{
+    background: white;
+    border:1px solid rgb(223, 216, 216);
+    width: 300px;
+    height: calc(100vh - 2px);
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-out;
+}
+.contenedor-sidebar.active{
+    width: 110px;
+}
+.contenedor-sidebar.active .contenedor-items a li{
+    display: none;
+}
+.contenedor-sidebar.active .contenedor-encabezado{
+    border: none;
+}
+.contenedor-sidebar aside, ul{
+    padding: 1em;
+}
+.contenedor-encabezado {
+    padding: em 1em;
+    font-size: 1.2em;
+    font-weight:400;
+    width: fit-content;
+    margin:20px auto 40px auto;
+    cursor: pointer;
+    transition: 0.2s ease-out;
+    border-bottom: 1px solid rgb(190, 187, 187);
+}
+
+.contenedor-encabezado:hover{
+    transform: translateY(-4px);
+}
+
+.contenedor-items a{
+    color: rgb(0, 0, 0,.7);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: .8em;
+    margin-bottom: .8em;
+    border-radius: .3em;
+    transition: .3s ease-out;
+}
+
+.contenedor-items a:hover{
+    background: #dededf;
+    transform: translateY(-4px);
+    color: black;
+}
+
+.contenedor-items a.active{
+    color: rgb(255, 255, 255);
+    background: #387de6;
+}
+.contenedor-items i{
+    padding: .5em;
+}
+
+.contenedor-items li{
+    list-style: none;
+    margin-left: 2em;
+    width: calc(100% - .5em);
+}
+
+.contenedor-principal{
+    width: 100%;
+    margin: 2em;
+}
+
+.contenedor-principal .titulo-contenedor{
+    align-items: center;
+    display: flex;
+}
+
+.contenedor-principal .titulo-contenedor i{
+    cursor: pointer;
+    margin-right: 1em;
+    font-size: 1.5em;
+}
+.bar-option{
+    display: none !important; 
+    position: relative;  
+    transition: 0.2s ease-in-out;
+}   
+.bar-option:hover{
+    transform: translateY(-4px);
+    transition: 0.2s;
+}
+.bar-option:hover::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 20px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgb(180, 180, 180);
+}
+.bar-option.active{
+    display: block !important;
+}
